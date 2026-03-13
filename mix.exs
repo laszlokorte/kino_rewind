@@ -35,7 +35,8 @@ defmodule KinoRewind.MixProject do
     [
       {:nx, "~> 0.11.0"},
       {:vega_lite, "~> 0.1.11"},
-      {:colorex, "~> 1.0"}
+      {:colorex, "~> 1.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 end
