@@ -1,0 +1,9 @@
+%{
+  "colorex": {:hex, :colorex, "1.0.0", "4344fe156e0dacfe7daabe348f5de18f0c3371aa05f7dc835a0d28c44a9a66c9", [:mix], [{:jason, ">= 0.0.0", [hex: :jason, repo: "hexpm", optional: false]}], "hexpm", "3aae023904259011df4412b1c7688da4e65436e09d878c104bbf0da7ca6bd881"},
+  "complex": {:hex, :complex, "0.6.0", "b0130086a7a8c33574d293b2e0e250f4685580418eac52a5658a4bd148f3ccf1", [:mix], [], "hexpm", "0a5fa95580dcaf30fcd60fe1aaf24327c0fe401e98c24d892e172e79498269f9"},
+  "jason": {:hex, :jason, "1.4.4", "b9226785a9aa77b6857ca22832cffa5d5011a667207eb2a0ad56adb5db443b8a", [:mix], [{:decimal, "~> 1.0 or ~> 2.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "c5eb0cab91f094599f94d55bc63409236a8ec69a21a67814529e8d5f6cc90b3b"},
+  "nx": {:hex, :nx, "0.11.0", "d37723dbd6cfa274a5def6d6664f5680c32e2eb8a1ce25ec6d91751967fa0abf", [:mix], [{:complex, "~> 0.6", [hex: :complex, repo: "hexpm", optional: false]}, {:telemetry, "~> 0.4.0 or ~> 1.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "36157b21239aeb251d6cbac23eb0eb3495a5e1e0cbc2e6df16afd2ede1575205"},
+  "table": {:hex, :table, "0.1.2", "87ad1125f5b70c5dea0307aa633194083eb5182ec537efc94e96af08937e14a8", [:mix], [], "hexpm", "7e99bc7efef806315c7e65640724bf165c3061cdc5d854060f74468367065029"},
+  "telemetry": {:hex, :telemetry, "1.4.1", "ab6de178e2b29b58e8256b92b382ea3f590a47152ca3651ea857a6cae05ac423", [:rebar3], [], "hexpm", "2172e05a27531d3d31dd9782841065c50dd5c3c7699d95266b2edd54c2dafa1c"},
+  "vega_lite": {:hex, :vega_lite, "0.1.11", "2b261d21618f6fa9f63bb4542f0262982d2e40aea3f83e935788fe172902b3c2", [:mix], [{:table, "~> 0.1.0", [hex: :table, repo: "hexpm", optional: false]}], "hexpm", "d18c3f11369c14bdf36ab53010c06bf5505c221cbcb32faac7420cf6926b3c50"},
+}

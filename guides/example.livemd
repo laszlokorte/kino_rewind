@@ -1,0 +1,79 @@
+# KinoRewind Examples
+
+```elixir
+Mix.install([
+  {:nx, "~> 0.11.0"},
+  {:kino, "~> 0.18.0"},
+  {:image, "~> 0.62.1"},
+  {:kino_rewind, "~> 0.1.0"},
+  {:kino_vega_lite, "~> 0.1.13"},
+])
+
+Kino.nothing()
+```
+
+```elixir
+defmodule Swirl do
+  import Nx.Defn
+
+  # defn expects non-tensor args to be passed as arg list
+  defn gen(opts \\ []) do
+    # make Nx.sqrt() and Nx.sin() available without namespace
+    import Nx
+
+    # we need to use Nx.Constants.pi instead of :math.pi() inside defn
+    import Nx.Constants, only: [pi: 0]
+
+    opts = keyword!(opts, rad: 6, frames: 10, freq: 10, phase: 0)
+    rad = opts[:rad]
+    freq = opts[:freq]
+    frames = opts[:frames]
+    phase = opts[:phase]
+
+    # tensor calculations can be done with operators inside defn
+    dx = iota({rad * 2, 1}) / rad - 1
+    dy = iota({1, rad * 2}) / rad - 1
+    dx2 = dx ** 2
+    dy2 = dy ** 2
+    rad = sqrt(dx2 + dy2)
+    angle = atan2(dy, dx)
+
+    freqs =
+      (iota({frames, 1, 1}) / frames + phase) * 2 * pi() * freq
+
+    cos(sqrt(freqs) * rad + angle - freqs)
+  end
+end
+
+rad = 12
+dx = Nx.iota({rad * 2, 1}) |> Nx.subtract(rad) |> Nx.divide(rad)
+dy = Nx.iota({1, rad * 2}) |> Nx.subtract(rad) |> Nx.divide(rad)
+dx2 = Nx.pow(dx, 2)
+dy2 = Nx.pow(dy, 2)
+radius = Nx.add(dx2, dy2) |> Nx.sqrt()
+angle = Nx.atan2(dy, dx)
+
+swirl = Swirl.gen(rad: rad, frames: 60, freq: 1, phase: 0)
+
+colored =
+  Nx.stack(for(d <- 0..2, do: Swirl.gen(rad: rad, frames: 1, freq: 4 * d, phase: 0.5)), axis: 1)
+  |> Nx.add(1)
+  |> Nx.divide(2)
+
+tornado =
+  Nx.stack(
+    for(d <- 0..2, do: Swirl.gen(rad: rad, frames: 60, freq: 1, phase: 0.2 * d)),
+    axis: 1
+  )
+
+[swirl, radius, angle, colored, tornado]
+|> KinoRewind.TensorPlot.plot(
+  concat: :wrappable,
+  columns: 3,
+  cmap: :viridis,
+  cmaps: ["viridis", "blues", "greys"],
+  size: 215,
+  titel: "Composition of a Swirl",
+  labels: ["Swirl", "Radius", "Angle", "Colored Swirl", "RGB Tornado"]
+)
+```
