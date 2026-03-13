@@ -12,6 +12,8 @@ Mix.install([
 Kino.nothing()
 ```
 
+## Example
+
 ```elixir
 defmodule Swirl do
   import Nx.Defn
