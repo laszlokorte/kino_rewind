@@ -19,7 +19,7 @@ KinoRewind is a helper module for rendering 3D and 4D `Nx.Tensor`s as sequence o
 
 ## Installation
 
-![kino_rewind](https://img.shields.io/hexpm/v/kino_rewind)
+[![kino_rewind](https://img.shields.io/hexpm/v/kino_rewind)](https://hex.pm/packages/kino_rewind)
 
 In Livebook add `kino_rewind` to your dependencies:
 
