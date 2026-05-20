@@ -4,7 +4,7 @@ defmodule KinoRewind.MixProject do
   def project do
     [
       app: :kino_rewind,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -33,7 +33,7 @@ defmodule KinoRewind.MixProject do
 
   defp deps do
     [
-      {:nx, "~> 0.11.0"},
+      {:nx, "~> 0.12.0"},
       {:vega_lite, "~> 0.1.11"},
       {:colorex, "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
