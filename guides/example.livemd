@@ -75,7 +75,7 @@ tornado =
   cmap: :viridis,
   cmaps: ["viridis", "blues", "greys"],
   size: 215,
-  titel: "Composition of a Swirl",
+  title: "Composition of a Swirl",
   labels: ["Swirl", "Radius", "Angle", "Colored Swirl", "RGB Tornado"]
 )
 ```

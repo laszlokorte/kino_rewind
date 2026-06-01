@@ -8,7 +8,7 @@
   cmap: :viridis,
   cmaps: ["viridis", "blues", "greys"],
   size: 360,
-  titel: "Composition of a Swirl",
+  title: "Composition of a Swirl",
   labels: ["Swirl", "Radius", "Angle", "Colored Swirl", "RGB Tornado"]
 )
 ```
@@ -54,7 +54,7 @@ angle = Nx.atan2(dy, dx)
   columns: 4,
   cmap: :viridis,
   size: 360,
-  titel: "Imagees",
+  title: "Imagees",
   labels: ["Radius", "Angle", "DX", "DY"]
 )
 ```

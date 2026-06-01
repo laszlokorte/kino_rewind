@@ -186,7 +186,7 @@ defmodule KinoRewind.TensorPlot do
       end
 
     Vl.new(
-      title: Keyword.get(args, :titel, "Images"),
+      title: Keyword.get(args, :title, "Images"),
       config: [legend: [gradient_length: plot_size]],
       columns: Keyword.get(args, :columns, nil)
     )
